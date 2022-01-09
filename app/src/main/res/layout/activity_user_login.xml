@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.example.foodordringsystem.viewModel.UserLoginViewModel" />
+        <variable
+            name="userDetails"
+            type="com.example.foodordringsystem.model.UserLogin" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.UserLoginActivity"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/mobileNumberET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/mobilenumber"
+            android:inputType="phone"
+            android:maxLength="18"
+            android:minHeight="48dp"
+            android:text="@={userDetails.mobileNumber}" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordET"
+            android:layout_marginTop="16dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:text="@={userDetails.password}"
+
+            android:maxLength="6" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/submitButton"
+            android:layout_marginTop="16dp"
+            android:text="@string/login"
+            android:onClick="@{() -> loginViewModel.doLoginRequest(userDetails)}"/>
+
+    </LinearLayout>
+</layout>

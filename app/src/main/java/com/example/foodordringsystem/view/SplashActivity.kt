@@ -1,4 +1,4 @@
-package com.example.foodordringsystem
+package com.example.foodordringsystem.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import com.example.foodordringsystem.R
 
 class SplashActivity : AppCompatActivity() {
     var anim : Animation ?= null
@@ -22,7 +23,7 @@ class SplashActivity : AppCompatActivity() {
         anim!!.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation) {}
             override fun onAnimationEnd(animation: Animation) {
-                startActivity(Intent(applicationContext, MainActivity::class.java))
+                startActivity(Intent(applicationContext, UserLoginActivity::class.java))
                 // HomeActivity.class is the activity to go after showing the splash screen.
             }
 
